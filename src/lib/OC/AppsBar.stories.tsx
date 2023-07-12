@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import logo from "../../../public/rfsui.png";
+import logo from "../../storyAssets/rfsui.png";
 
 import { AppsBar, AppsBarProps } from "./AppsBar";
 

@@ -1,11 +1,8 @@
-import { FC, ReactNode, useMemo } from "react";
+import { useMemo } from "react";
 import {
   Avatar,
-  Box,
   Button,
   Divider,
-  Flex,
-  Grid,
   Heading,
   HStack,
   Image,
@@ -36,7 +33,7 @@ export type AppsBarProps = {
   navLinks?: NavLink[];
 };
 
-export const AppsBar: FC = (props: AppsBarProps) => {
+export const AppsBar = (props: AppsBarProps) => {
   const currentApp = useMemo(() => {
     return props.apps?.find((x) => x.active);
   }, [props.apps]);
@@ -66,14 +63,14 @@ export const AppsBar: FC = (props: AppsBarProps) => {
               </SimpleGrid>
             </MenuList>
           </Menu>
-          <Heading size={"md"}>{currentApp.name}</Heading>
+          <Heading size={"md"}>{currentApp?.name}</Heading>
         </HStack>
         <HStack>
           <Avatar size={"sm"} />
         </HStack>
       </HStack>
       <Divider />
-      {props.navLinks?.length > 0 && (
+      {(props.navLinks?.length || 0) > 0 && (
         <>
           <HStack px={3} py={1}>
             {props.navLinks?.map((navLink) => {
@@ -85,7 +82,6 @@ export const AppsBar: FC = (props: AppsBarProps) => {
                   rounded={"full"}
                   px={3}
                   variant={navLink.active ? "solid" : "ghost"}
-                  active={navLink.active}
                 >
                   {navLink.label}
                 </Button>
