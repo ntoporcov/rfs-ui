@@ -15,7 +15,12 @@ export default defineConfig(({ command }) => {
     plugins.push(
       dts({
         insertTypesEntry: true,
-        exclude: ["**/playground/**", "**/src/*.stories.ts"],
+        exclude: [
+          "**/playground/**",
+          "**/src/**/*.stories.ts",
+          "**/src/**/*.stories.tsx",
+          "**/*.mdx",
+        ],
       }),
     );
   }
