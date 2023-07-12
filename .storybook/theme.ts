@@ -1,9 +1,9 @@
 import { create } from "@storybook/theming/create";
-
+import logo from "../src/storyAssets/rfsui.png";
 export default create({
   base: "light",
   brandTitle: "RFS UI",
   brandUrl: "/",
-  brandImage: "/public/logo_rfsmart.png",
+  brandImage: logo,
   brandTarget: "_self",
 });

@@ -9,7 +9,8 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "touch ./storybook-static/.nojekyll && gh-pages -d storybook-static -t true"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.7.1",
@@ -39,6 +40,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "eslint-plugin-storybook": "^0.6.12",
+    "gh-pages": "^5.0.0",
     "prettier": "^3.0.0",
     "prop-types": "^15.8.1",
     "react-error-boundary": "^4.0.10",
@@ -54,13 +56,14 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/my-lib.umd.js",
-  "module": "./dist/my-lib.es.js",
+  "main": "./dist/rfs-ui.umd.js",
+  "module": "./dist/rfs-ui.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.es.js",
-      "require": "./dist/my-lib.umd.js"
+      "import": "./dist/rfs-ui.es.js",
+      "require": "./dist/rfs-ui.umd.js"
     }
-  }
+  },
+  "homepage": "http://ntoporcov.github.io/rfs-ui"
 }

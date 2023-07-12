@@ -25,12 +25,8 @@ export default defineConfig(({ command }) => {
     );
   }
 
-  if (command === "serve") {
-    plugins.push(react());
-  }
-
   return {
-    plugins,
+    plugins: [react(), ...plugins],
     server: {
       port: 3000,
     },
