@@ -13,4 +13,4 @@ export type AppsBarProps = {
     apps: AppLink[];
     navLinks?: NavLink[];
 };
-export declare const AppsBar: (props: AppsBarProps) => import("react/jsx-runtime").JSX.Element;
+export declare const OCAppsBar: (props: AppsBarProps) => import("react/jsx-runtime").JSX.Element;

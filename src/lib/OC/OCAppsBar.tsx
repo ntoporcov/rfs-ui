@@ -33,7 +33,7 @@ export type AppsBarProps = {
   navLinks?: NavLink[];
 };
 
-export const AppsBar = (props: AppsBarProps) => {
+export const OCAppsBar = (props: AppsBarProps) => {
   const currentApp = useMemo(() => {
     return props.apps?.find((x) => x.active);
   }, [props.apps]);

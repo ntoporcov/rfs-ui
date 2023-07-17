@@ -32,14 +32,19 @@ export default defineConfig(({ command }) => {
     },
     build: {
       lib: {
-        entry: resolve(__dirname, libEntry),
-        name: "@rfsmart/UI",
-        formats: ["es", "umd"],
-        fileName: (format) => `rfs-ui.${format}.js`,
+        entry: {
+          index: resolve(__dirname, "src/lib/index.ts"),
+          Providers: resolve(__dirname, "src/lib/Providers/index.ts"),
+          OC: resolve(__dirname, "src/lib/OC/index.ts"),
+        },
+        name: "@rfs/ui",
+        formats: ["es"],
+        fileName: (format, entryName) => `${entryName}.js`,
       },
       rollupOptions: {
         external: ["react", "react-dom"],
         output: {
+          chunkFileNames: "[name]-[hash].js",
           globals: {
             react: "React",
             "react-dom": "ReactDOM",

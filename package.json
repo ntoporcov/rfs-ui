@@ -56,14 +56,28 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/rfs-ui.umd.js",
-  "module": "./dist/rfs-ui.es.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/rfs-ui.es.js",
-      "require": "./dist/rfs-ui.umd.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./Providers": {
+      "types": "./dist/Providers.d.ts",
+      "import":"./dist/Providers.js"
+    },
+    "./OC": {
+      "types": "./dist/OC.d.ts",
+      "import": "./dist/OC.js"
     }
   },
+  "typesVersions": {
+    "*": {
+      "Providers": ["./dist/Providers.d.ts"],
+      "OC": ["./dist/OC.d.ts"]
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "homepage": "http://ntoporcov.github.io/rfs-ui"
 }

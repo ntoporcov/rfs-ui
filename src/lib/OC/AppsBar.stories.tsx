@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import logo from "../../storyAssets/rfsui.png";
 
-import { AppsBar, AppsBarProps } from "./AppsBar";
+import { OCAppsBar, AppsBarProps } from "./OCAppsBar";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
   title: "Oracle Cloud/AppsBar",
-  component: AppsBar,
+  component: OCAppsBar,
   tags: ["autodocs"],
   args: {
     apps: [
@@ -33,7 +33,7 @@ const meta = {
       },
     ],
   } as AppsBarProps,
-} satisfies Meta<typeof AppsBar>;
+} satisfies Meta<typeof OCAppsBar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
